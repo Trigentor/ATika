@@ -1,0 +1,6 @@
+﻿  Source.cpp
+C:\Users\Рамазан\source\repos\ATika\ATika\Source.cpp(79,20): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\Рамазан\source\repos\ATika\ATika\Source.cpp(84,20): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\Рамазан\source\repos\ATika\ATika\Source.cpp(89,23): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\Рамазан\source\repos\ATika\ATika\Source.cpp(95,23): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+  ATika.vcxproj -> C:\Users\Рамазан\source\repos\ATika\Debug\ATika.exe

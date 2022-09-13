@@ -1,0 +1,10 @@
+﻿MSVCRTD.lib(initializers.obj) : warning LNK4098: библиотека по умолчанию "msvcrt.lib" конфликтует с использованием других библиотек; используйте /NODEFAULTLIB:library
+Source.obj : error LNK2019: ссылка на неразрешенный внешний символ "__declspec(dllimport) public: __cdecl sf::String::String(char const *,class std::locale const &)" (__imp_??0String@sf@@QEAA@PEBDAEBVlocale@std@@@Z) в функции main.
+Source.obj : error LNK2019: ссылка на неразрешенный внешний символ "__declspec(dllimport) public: __cdecl sf::String::~String(void)" (__imp_??1String@sf@@QEAA@XZ) в функции main.
+Source.obj : error LNK2019: ссылка на неразрешенный внешний символ "__declspec(dllimport) public: static bool __cdecl sf::Keyboard::isKeyPressed(enum sf::Keyboard::Key)" (__imp_?isKeyPressed@Keyboard@sf@@SA_NW4Key@12@@Z) в функции main.
+Source.obj : error LNK2019: ссылка на неразрешенный внешний символ "__declspec(dllimport) public: __cdecl sf::VideoMode::VideoMode(unsigned int,unsigned int,unsigned int)" (__imp_??0VideoMode@sf@@QEAA@III@Z) в функции main.
+Source.obj : error LNK2019: ссылка на неразрешенный внешний символ "__declspec(dllimport) public: bool __cdecl sf::Window::isOpen(void)const " (__imp_?isOpen@Window@sf@@QEBA_NXZ) в функции main.
+Source.obj : error LNK2019: ссылка на неразрешенный внешний символ "__declspec(dllimport) public: bool __cdecl sf::Window::pollEvent(class sf::Event &)" (__imp_?pollEvent@Window@sf@@QEAA_NAEAVEvent@2@@Z) в функции main.
+Source.obj : error LNK2019: ссылка на неразрешенный внешний символ "__declspec(dllimport) public: __cdecl sf::RenderWindow::RenderWindow(class sf::VideoMode,class sf::String const &,unsigned int,struct sf::ContextSettings const &)" (__imp_??0RenderWindow@sf@@QEAA@VVideoMode@1@AEBVString@1@IAEBUContextSettings@1@@Z) в функции main.
+Source.obj : error LNK2019: ссылка на неразрешенный внешний символ "__declspec(dllimport) public: virtual __cdecl sf::RenderWindow::~RenderWindow(void)" (__imp_??1RenderWindow@sf@@UEAA@XZ) в функции main.
+C:\Users\Рамазан\source\repos\ATika\x64\Debug\ATika.exe : fatal error LNK1120: неразрешенных внешних элементов: 8
