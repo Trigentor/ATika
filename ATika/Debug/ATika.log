@@ -1,6 +1,19 @@
 ﻿  Source.cpp
-C:\Users\Рамазан\source\repos\ATika\ATika\Source.cpp(79,20): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-C:\Users\Рамазан\source\repos\ATika\ATika\Source.cpp(84,20): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-C:\Users\Рамазан\source\repos\ATika\ATika\Source.cpp(89,23): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-C:\Users\Рамазан\source\repos\ATika\ATika\Source.cpp(95,23): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\Рамазан\source\repos\ATika\ATika\Source.cpp(22,7): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Users\Рамазан\source\repos\ATika\ATika\Source.cpp(22,14): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Users\Рамазан\source\repos\ATika\ATika\Source.cpp(27,7): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Users\Рамазан\source\repos\ATika\ATika\Source.cpp(27,14): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Users\Рамазан\source\repos\ATika\ATika\Source.cpp(28,42): warning C4244: аргумент: преобразование "float" в "T", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+C:\Users\Рамазан\source\repos\ATika\ATika\Source.cpp(28,39): warning C4244: аргумент: преобразование "float" в "T", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+C:\Users\Рамазан\source\repos\ATika\ATika\Source.cpp(84,33): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+C:\Users\Рамазан\source\repos\ATika\ATika\Source.cpp(84,26): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+C:\Users\Рамазан\source\repos\ATika\ATika\Source.cpp(93,14): warning C4244: инициализация: преобразование "sf::Int64" в "float", возможна потеря данных
   ATika.vcxproj -> C:\Users\Рамазан\source\repos\ATika\Debug\ATika.exe

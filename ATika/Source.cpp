@@ -7,6 +7,44 @@
 
 using namespace std;
 using namespace sf;
+class Play
+{
+public:
+	float x, y, w, h, dy, dx, speed = 0;
+	int dir = 0;
+	String path;
+	Image image;
+	Texture texture;
+	Sprite sprite;
+	Play(String P, int X, int Y, int W, int H)
+	{
+		path = P;
+		w = W; h = H;
+		image.loadFromFile("D:/Go/" + path);
+		image.createMaskFromColor(Color(Color::White));
+		texture.loadFromImage(image);
+		sprite.setTexture(texture);
+		x = X; y = Y;
+		sprite.setTextureRect(IntRect(0, 0, w, h));
+
+	}
+	void update(float time)
+	{
+		switch (dir)
+		{
+		case 0:dx = speed; dy = 0; break;
+		case 1:dx = -speed; dy = 0; break;
+		case 2:dx = 0; dy = speed; break;
+		case 3:dx = 0; dy = -speed; break;
+		}
+
+		x += dx * time;
+		y += dy * time;
+
+		speed = 0;
+		sprite.setPosition(x, y);
+	}
+};
 int main()
 {
 	setlocale(LC_ALL, "ru");
@@ -41,62 +79,47 @@ int main()
 	/*CircleShape shape(100.f);
 	shape.setFillColor(Color::Yellow);
 	*/
-	class images
+	
+	Play B("Back.png", 250, 250, 1800, 1000);
+	Play P("One.png", 0, 0, 83.00, 106.00);
+	
+
+	//int xcor = 0, ycor = 0;
+	//float CurrentFrame = 0;
+	Clock clock;
+	while (window.isOpen())
 	{
-	public:
-		int x, y, w, h;
-		string path;
-		Image image;
-		Texture texture;
-		Sprite sprite;
-		images(String P,int X, int Y, int W, int H)
-		{
-			path = P;
-			w = W; h = H;
-			image.loadFromFile("D:/Go/" + path);
-			//image.createMaskFromColor(Color(Color::White));
-			texture.loadFromImage(image);
-			sprite.setTexture(texture);
-			sprite.setTextureRect(IntRect(w, h, w, h));
-		
-		}
-	};
-	images B("Back.png", 250, 250, 1800, 1000);
-	images P("One.png", 0, 0, 83, 106);
-	
 
-	int xcor = 0, ycor = 0;
-	
-		while (window.isOpen())
-		{
-			Event event;
-			while (window.pollEvent(event))
-			{
+		float time = clock.getElapsedTime().asMicroseconds();
+		clock.restart();
+		time = time / 800;
 
-				if (Keyboard::isKeyPressed(Keyboard::D))
-				{
-					xcor = 2;
+		Event event;
+		while (window.pollEvent(event))
+		{
+			//Начало
+			if ((Keyboard::isKeyPressed(Keyboard::A))|| (Keyboard::isKeyPressed(Keyboard::Left))){
+				P.dir = 1; P.speed = 5;
+				/*CurrentFrame += 0.005 * time;
+				if (CurrentFrame > 3)CurrentFrame -= 3;*/
+				/*xcor = 2;
 					P.sprite.move(xcor, 0);
+				*/
 				};
-				if (Keyboard::isKeyPressed(Keyboard::A))
-				{
-					xcor = -2;
-					P.sprite.move(xcor, 0);
-				};
-				if (Keyboard::isKeyPressed(Keyboard::W))
-				{
-					ycor = -2;
-					P.sprite.move(0, ycor);
-					
-				};
-				if (Keyboard::isKeyPressed(Keyboard::S))
-				{
-					ycor = 2;
-					P.sprite.move(0, ycor);
-				};
+			if ((Keyboard::isKeyPressed(Keyboard::D)) || (Keyboard::isKeyPressed(Keyboard::Right))) {
+				P.dir = 0; P.speed = 5;
+			};
+			if ((Keyboard::isKeyPressed(Keyboard::W)) || (Keyboard::isKeyPressed(Keyboard::Up))) {
+				P.dir = 3; P.speed = 5;
+			};
+			if ((Keyboard::isKeyPressed(Keyboard::S)) || (Keyboard::isKeyPressed(Keyboard::Down))) {
+				P.dir = 2; P.speed = 5;
+			};
 				if (event.type == Event::Closed)
 					window.close();
 			};
+			P.update(time);
+
 			window.clear();
 			window.draw(B.sprite);
 			window.draw(P.sprite);
