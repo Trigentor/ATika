@@ -65,7 +65,7 @@ int main()
 		break;
 	}
 	*/
-
+	
 	//Пропуск числа
 	/*int a = 0;
 	cout << "Введите число:";
@@ -81,11 +81,11 @@ int main()
 	*/
 	
 	Play B("Back.png", 250, 250, 1800, 1000);
-	Play P("One.png", 0, 0, 83.00, 106.00);
+	Play P("One.png", 0, 0, 51.00, 91.00);
 	
 
 	//int xcor = 0, ycor = 0;
-	//float CurrentFrame = 0;
+	float CurrentFrame = 0;
 	Clock clock;
 	while (window.isOpen())
 	{
@@ -97,24 +97,42 @@ int main()
 		Event event;
 		while (window.pollEvent(event))
 		{
-			//Начало
+			
+			//Начало Ивентов 
+			//Правильно Лево+ клавиш A
 			if ((Keyboard::isKeyPressed(Keyboard::A))|| (Keyboard::isKeyPressed(Keyboard::Left))){
 				P.dir = 1; P.speed = 5;
-				/*CurrentFrame += 0.005 * time;
-				if (CurrentFrame > 3)CurrentFrame -= 3;*/
+				CurrentFrame += 0.09 * time;
+				if (CurrentFrame > 3)CurrentFrame -= 3;
+				P.sprite.setTextureRect(IntRect(52 * int(CurrentFrame), 93, 51, 91));
 				/*xcor = 2;
 					P.sprite.move(xcor, 0);
 				*/
 				};
+			//Правильно Право+ клавиш D
 			if ((Keyboard::isKeyPressed(Keyboard::D)) || (Keyboard::isKeyPressed(Keyboard::Right))) {
 				P.dir = 0; P.speed = 5;
+				CurrentFrame += 0.09 * time;
+				if (CurrentFrame > 3)CurrentFrame -= 3;
+				P.sprite.setTextureRect(IntRect(52 * int(CurrentFrame), 0, 51, 91));
 			};
+
 			if ((Keyboard::isKeyPressed(Keyboard::W)) || (Keyboard::isKeyPressed(Keyboard::Up))) {
 				P.dir = 3; P.speed = 5;
+				CurrentFrame += 0.09 * time;
+				if (CurrentFrame > 3)CurrentFrame -= 3;
+				P.sprite.setTextureRect(IntRect(52 * int(CurrentFrame), 186, 51, 91));
 			};
 			if ((Keyboard::isKeyPressed(Keyboard::S)) || (Keyboard::isKeyPressed(Keyboard::Down))) {
 				P.dir = 2; P.speed = 5;
+				CurrentFrame += 0.09 * time;
+				if (CurrentFrame > 3)CurrentFrame -= 3;
+				P.sprite.setTextureRect(IntRect(52 * int(CurrentFrame), 279, 51, 91));
 			};
+			if (Keyboard::isKeyPressed(Keyboard::Space))
+			{
+				P.path = "Two.png";
+			}
 				if (event.type == Event::Closed)
 					window.close();
 			};
